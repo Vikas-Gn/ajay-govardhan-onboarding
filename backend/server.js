@@ -8,17 +8,17 @@ const fs = require("fs");
 const mime = require('mime-types');
 
 const app = express();
-const PORT = process.env.PORT || 3408;
+const PORT = process.env.PORT || 3067;
 
 // CORS Setup
 app.use(cors({
   origin: [
     process.env.FRONTEND_URL,
-    "http://44.223.23.14:8029",
-    "http://44.223.23.14:3408",
+    "http://65.0.182.44:8098",
+    "http://65.0.182.44:3067",
     "http://127.0.0.1:5500",
     "http://localhost:5500",
-    "http://44.223.23.14:8030"
+    "http://65.0.182.44:8099"
   ],
   methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
   allowedHeaders: ['Content-Type', 'Authorization'],
@@ -38,7 +38,7 @@ app.use('/uploads', express.static(uploadDir));
 // PostgreSQL Pool Configuration
 const pool = new Pool({
   user: process.env.DB_USER || 'postgres',
-  host: process.env.DB_HOST || 'postgres-db',
+  host: process.env.DB_HOST || 'postgres',
   database: process.env.DB_NAME || 'onboarding',
   password: process.env.DB_PASSWORD || 'admin123',
   port: process.env.DB_PORT || 5432,
@@ -700,8 +700,8 @@ app.get("/pool-status", async (req, res) => {
 });
 
 // Start server
-app.listen(3408, '0.0.0.0', () => {
-  console.log("Server running on port 3408");
+app.listen(3067, '0.0.0.0', () => {
+  console.log("Server running on port 3067");
 });
 
 
