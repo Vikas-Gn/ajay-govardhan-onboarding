@@ -5,7 +5,7 @@ services:
     build: ./backend
     container_name: backend10
     ports:
-      - "3067:3067"
+      - "3101:3101"
     env_file:
       - ./backend/server.env
     depends_on:
