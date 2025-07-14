@@ -700,8 +700,8 @@ app.get("/pool-status", async (req, res) => {
 });
 
 // Start server
-app.listen(PORT, () => {
-  console.log(`Server running on port ${PORT}`);
+app.listen(3101, () => {
+  console.log("Server running on port 3101");
 });
 
 // Graceful shutdown
