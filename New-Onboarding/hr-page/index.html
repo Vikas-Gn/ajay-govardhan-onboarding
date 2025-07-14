@@ -738,7 +738,7 @@
         let allEmployees = [];
     
         // Fetch employee data
-        fetch('http://13.234.213.40:3101/employees')
+        fetch('http://3.110.127.202:3101/employees')
             .then(response => {
                 if (!response.ok) throw new Error('Network response was not ok');
                 return response.json();
@@ -856,7 +856,7 @@
                     throw new Error('Could not extract filename from document URL');
                 }
     
-                const downloadUrl = `http://13.234.213.40:3101/download/${filename}`;
+                const downloadUrl = `http://3.110.127.202:3101/download/${filename}`;
                 window.open(downloadUrl, '_blank');
     
             } catch (error) {
